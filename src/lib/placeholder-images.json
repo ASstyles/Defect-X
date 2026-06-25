@@ -1,0 +1,28 @@
+{
+  "placeholderImages": [
+    {
+      "id": "factory-floor",
+      "description": "Modern high-tech factory floor with robotics",
+      "imageUrl": "https://picsum.photos/seed/factory1/1200/800",
+      "imageHint": "industrial factory robotics"
+    },
+    {
+      "id": "defect-crack",
+      "description": "Close up of a metal crack defect",
+      "imageUrl": "https://picsum.photos/seed/crack/600/400",
+      "imageHint": "metal crack texture"
+    },
+    {
+      "id": "defect-corrosion",
+      "description": "Close up of surface corrosion on steel",
+      "imageUrl": "https://picsum.photos/seed/corrosion/600/400",
+      "imageHint": "rust metal texture"
+    },
+    {
+      "id": "machine-component",
+      "description": "Complex industrial machine component",
+      "imageUrl": "https://picsum.photos/seed/machine/800/600",
+      "imageHint": "engine turbine component"
+    }
+  ]
+}

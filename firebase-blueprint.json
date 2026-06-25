@@ -1,0 +1,113 @@
+
+{
+  "entities": {
+    "Detection": {
+      "title": "Detection",
+      "description": "A detected defect from the computer vision system.",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The category of defect (e.g., Crack, Scratch)."
+        },
+        "x": {
+          "type": "number",
+          "description": "X coordinate percentage (0-100)."
+        },
+        "y": {
+          "type": "number",
+          "description": "Y coordinate percentage (0-100)."
+        },
+        "w": {
+          "type": "number",
+          "description": "Width percentage (0-100)."
+        },
+        "h": {
+          "type": "number",
+          "description": "Height percentage (0-100)."
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence score (0-1)."
+        },
+        "machineId": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "type",
+        "x",
+        "y",
+        "w",
+        "h",
+        "severity",
+        "confidence",
+        "machineId",
+        "timestamp"
+      ]
+    },
+    "Alert": {
+      "title": "Alert",
+      "description": "System or quality alert.",
+      "type": "object",
+      "properties": {
+        "severity": {
+          "type": "string",
+          "enum": [
+            "Critical",
+            "Warning",
+            "Info"
+          ]
+        },
+        "message": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "resolved"
+          ]
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "severity",
+        "message",
+        "status",
+        "timestamp"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "google.com"
+    ]
+  },
+  "firestore": {
+    "detections": {
+      "schema": "Detection",
+      "description": "Real-time stream of defect detections."
+    },
+    "alerts": {
+      "schema": "Alert",
+      "description": "System and quality alerts log."
+    }
+  }
+}
